@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: #d1faff;
+    }
+
+    h2, h3, h5 {
+      color: #20b9df;
+      text-shadow: 2px 1px 3px black;
+    }
+
+    .container-section {
+      padding-top: 100px;
+      padding-bottom: 60px;
+    }
+
+    
+    .navbar-custom {
+      background-color: rgba(0,0,0,0.85);
+      box-shadow: 0 2px 6px rgba(32,185,223,0.7);
+    }
+    .navbar-custom .nav-link {
+      color: #d1faff !important;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .navbar-custom .nav-link:hover {
+      color: #20b9df !important;
+    }
+
+    
+    .hero-video {
+      width: 100%;
+      max-width: 400px; 
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(32,185,223,0.6);
+      margin: 0 auto;
+    }
+    .hero-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    
+    .card {
+      background-color: rgba(0, 0, 0, 0.75);
+      box-shadow: 6px 6px 15px rgba(32, 185, 223, 0.6);
+      border: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border-radius: 25px;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 10px 10px 25px rgba(32, 185, 223, 0.8);
+    }
+    .card-body {
+      border-radius: 25px;
+    }
+    .card p {
+      font-weight: 500;
+      color: #d1faff;
+      text-shadow: 1px 1px 2px black;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero-video {
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand text-light fw-bold" href="#">Moi Tech</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="home.html">⬅ Back</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  
+  <div class="container container-section">
+    <div class="row g-4">
+      
+      <div class="col-lg-6 col-md-12">
+        <div class="card p-4 mb-4">
+          <div class="card-body">
+            <h3>Our Purpose</h3>
+            <p>
+              Moi Tech helps individuals and families save, organize, and revisit their most meaningful memories — your MOI (Moments of Importance) — securely and effortlessly.
+            </p>
+            <small class="text-info">We aim to make memory preservation simple, secure, and enjoyable.</small>
+          </div>
+        </div>
+
+        <div class="card p-4 mb-4">
+          <div class="card-body">
+            <h3>How We Help You</h3>
+            <p>
+              Our platform lets you store life’s important memories — photos, notes, dates, and events — all categorized and safely backed up for future generations.
+            </p>
+            <small class="text-info">Access your memories anytime, from any device.</small>
+          </div>
+        </div>
+
+        <div class="card p-4 mb-4">
+          <div class="card-body">
+            <h3>How to Use Moi Tech</h3>
+            <p>
+              1. Create an account and log in.<br>
+              2. Upload your special moments.<br>
+              3. Organize them into collections or timelines.<br>
+              4. Access them anytime, forever.
+            </p>
+            <small class="text-info">Everything is designed to be intuitive, fast, and secure.</small>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="col-lg-6 col-md-12 d-flex flex-column align-items-center">
+        <div class="hero-video mb-4">
+          <video autoplay muted loop>
+            <source src="moivid.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="card p-4 mb-4 w-100">
+          <div class="card-body">
+            <h3>Why Use Moi Tech?</h3>
+            <p>
+              Forget scattered photos and lost memories. Moi Tech ensures all your key moments are saved, sorted, and secure — accessible from anywhere, anytime.
+            </p>
+            <small class="text-info">Enjoy peace of mind knowing your memories are safe and organized.</small>
+          </div>
+        </div>
+
+        <div class="card p-4 mb-4 w-100">
+          <div class="card-body text-center">
+            <h3>Our Commitment</h3>
+            <p>
+              At Moi Tech, we are committed to privacy, reliability, and long-term accessibility. Your memories are personal, and we ensure they remain safe and easily accessible to you and your loved ones.
+            </p>
+            <small class="text-info">We continually update our platform to provide the best security and user experience.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

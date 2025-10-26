@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .form-card, .info-card {
+      background-color: rgba(0, 0, 0, 0.6); 
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px white;
+    }
+
+    label {
+      float: left;
+    }
+
+    input, textarea {
+      width: 100%;
+    }
+
+    .form-control {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .text-white-shadow {
+      text-shadow: 1px 1px 3px #fff;
+    }
+
+    
+    .top-buttons {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      display: flex;
+      gap: 10px;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+
+  <div style="background-image: url('me.jpeg'); background-size: cover; background-position: center; height: 100vh; display: flex; align-items: center; position: relative;">
+
+    
+    <div class="top-buttons">
+      <a href="home.html" class="btn btn-outline-light">⬅ Back</a>
+      <a href="login.html" class="btn btn-outline-light">Login</a>
+    </div>
+
+    <div class="container">
+      <div class="row justify-content-center">
+        <marquee class="text-white fw-bold mt-3 mb-4">For any clarification regarding 
+            this site, please feel free to contact me.</marquee>
+
+        <div class="col-md-6 mb-4">
+          <div class="form-card text-white-shadow">
+            <h2 class="text-white fw-bold mb-4 text-center">Contact Us</h2>
+            <form>
+              <div class="mb-3">
+                <label class="form-label text-white fw-bold">Name</label>
+                <input type="text" class="form-control" autocomplete="off" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label text-white fw-bold">Email</label>
+                <input type="email" class="form-control" autocomplete="off" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label text-white fw-bold">Phone Number</label>
+                <input type="tel" class="form-control" autocomplete="off"  required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label text-white fw-bold">Message</label>
+                <textarea class="form-control fw-bold"  rows="3"  autocomplete="off" ></textarea>
+              </div>
+              <div class="text-end">
+                <button type="submit" class="btn btn-outline-light">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4"><br><br><br><br>
+          <div class="info-card text-center text-white-shadow">
+            <h2 class="fw-bold text-white">Contact Me</h2>
+            <h3 class="fw-bold text-white">MOI TECH</h3>
+            <p class="fw-bold text-white">📞: 9042173139</p>
+            <p class="fw-bold text-white">📧 Email: moi_tech@example.com</p>
+            <p class="fw-bold text-white">📍 Address: Vandiyur, Madurai - 20</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

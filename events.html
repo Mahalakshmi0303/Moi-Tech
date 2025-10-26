@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background: url('eventbac.jpg') center/cover no-repeat;
+      min-height: 100vh;
+    }
+
+    .transparent-container {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 950px;
+      margin: auto;
+    }
+
+    .icon-row {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .icon-item img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 10px goldenrod;
+      margin-bottom: 5px;
+    }
+
+    .carousel-inner img {
+      width: 250px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 0 15px goldenrod;
+      margin: auto;
+    }
+
+    /* Navbar Custom Styles */
+    .navbar-custom {
+      background-color: rgba(0,0,0,0.85);
+      box-shadow: 0 2px 6px rgba(255,215,0,0.7);
+    }
+    .navbar-custom .nav-link {
+      color: #fff !important;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .navbar-custom .nav-link:hover {
+      color: gold !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#">Moi Tech</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="home.html">⬅ Back</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="text-center text-white mt-5 pt-5 me-3">
+    <h3>Memorable Events</h3>
+    <small>We help preserve your cherished memories</small>
+  </div>
+
+  
+  <div class="container mt-5 pt-3">
+    <div class="transparent-container">
+      <div class="icon-row">
+        <div class="icon-item text-center">
+          <img src="birth.gif" alt="Birthday" />
+          <p>Birthday</p>
+        </div>
+        <div class="icon-item text-center">
+          <img src="marraige.gif" alt="Wedding" />
+          <p>Wedding</p>
+        </div>
+        <div class="icon-item text-center">
+          <img src="ear.jpg" alt="Ear Piercing" />
+          <p>Ear Piercing</p>
+        </div>
+        <div class="icon-item text-center">
+          <img src="baby.gif" alt="Baby Shower" />
+          <p>Baby Shower</p>
+        </div>
+        <div class="icon-item text-center">
+          <img src="housewarm.jpg" alt="Housewarming" />
+          <p>Housewarming</p>
+        </div>
+      </div>
+
+      <div class="services text-center mt-4">
+        <h6 class="text-success">Our Services</h6>
+        <p>We securely preserve your most joyful and unforgettable moments — from weddings to baby showers.</p>
+        <p>Let our expert team manage your MOI data, so you can cherish your memories for a lifetime.</p>
+        <p class="text-warning fw-bold">Reserve your date — let's make it magical!</p>
+        <p class="text-info">Book early and enjoy exclusive offers!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container text-center" style=" max-width: 950px; margin: 40px auto; background-color: rgba(0, 0, 0, 0.6); padding: 20px; border-radius: 15px;">
+    <h4 class="fw-bold mb-3 text-white">Managed by Professionals</h4>
+    <div id="teamCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="moi.jpg" class="d-block" alt="Team 1">
+        </div>
+        <div class="carousel-item">
+          <img src="event1.jpg" class="d-block" alt="Team 2">
+        </div>
+        <div class="carousel-item">
+          <img src="event2.jpg" class="d-block" alt="Team 3">
+        </div>
+        <div class="carousel-item">
+          <img src="event3.jpeg" class="d-block" alt="Team 4">
+        </div>
+        <div class="carousel-item">
+          <img src="event4.jpg" class="d-block" alt="Team 5">
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-dark rounded-circle"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#teamCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-dark rounded-circle"></span>
+      </button>
+    </div>
+
+    <small class="d-block mt-3 text-white">Your MOI (Moments of Importance) data — managed securely and professionally.</small>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MOI Tech - Contributions</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      background: url('moisaver.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+
+    .green-shadow {
+      box-shadow: 0 7px 15px rgba(25, 187, 25, 0.5);
+    }
+
+    .form-control {
+      box-shadow: 0 0 9px 5px rgba(0, 128, 0, 0.5);
+      border: 1px solid #198754;
+    }
+
+    .form-control:focus {
+      box-shadow: 0 0 10px 8px rgba(9, 184, 9, 0.7);
+      border-color: #179b5d;
+    }
+
+    table {
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    .table thead th {
+      background-color: #198754;
+      color: white;
+    }
+
+    
+    .top-buttons {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 10;
+      display: flex;
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+ 
+  <div class="top-buttons">
+    <a href="home.html" class="btn btn-outline-success text-light fw-bold">Back</a>
+     <a href="contact.html" class="btn btn-outline-success text-light fw-bold">contact</a>
+  </div>
+
+  <div class="container mt-5">
+    <h2 class="text-center text-white fw-bold mb-4" style="text-shadow: 1px 2px 1px #15d47b;">MOI Tech - Contribution Form</h2>
+
+    <div class="row">
+      <div class="col-md-5">
+        <form id="contributionForm" class="bg-transparent p-4 rounded green-shadow">
+          <div class="mb-3">
+            <label class="form-label text-white fw-bold">Name</label>
+            <input type="text" class="form-control" id="name"  autocomplete="off" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-white fw-bold">Occupation</label>
+            <input type="text" class="form-control" id="occupation" autocomplete="off" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-white fw-bold">Place</label>
+            <input type="text" class="form-control" id="place" autocomplete="off" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-white fw-bold">Relation Type</label>
+            <input type="text" class="form-control" id="relation" placeholder="e.g., Uncle, Father, Cousin" autocomplete="off" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-white fw-bold">Contact (optional)</label>
+            <input type="text" class="form-control" id="contact"autocomplete="off">
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-white fw-bold">Contribution Amount</label>
+            <input type="number" class="form-control" id="contribution" autocomplete="off" required>
+          </div>
+          <button type="submit" class="btn btn-success w-100">Submit</button>
+        </form>
+      </div>
+
+      <div class="col-md-7">
+        <div class="bg-light p-3 rounded green-shadow">
+          <h4 class="fw-bold mb-3">All MOI Contributions</h4>
+          <table class="table table-bordered table-striped table-hover">
+            <thead>
+              <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Occupation</th>
+                <th>Place</th>
+                <th>Relation</th>
+                <th>Contact</th>
+                <th>Amount (₹)</th>
+              </tr>
+            </thead>
+            <tbody id="moiTableBody"></tbody>
+          </table>
+          <div class="d-flex justify-content-between">
+            <div class="fw-bold">Total People: <span id="totalPeople">0</span></div>
+            <div class="fw-bold">Total Amount: ₹<span id="totalAmount">0</span></div>
+          </div>
+          <button class="btn btn-warning mt-3" onclick="downloadCSV()">Download as CSV</button>
+          <button class="btn btn-danger mt-3 ms-2" onclick="clearData()">Clear All Data</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('contributionForm');
+    const moiTableBody = document.getElementById('moiTableBody');
+    const totalAmountDisplay = document.getElementById('totalAmount');
+    const totalPeopleDisplay = document.getElementById('totalPeople');
+
+    let moiData = JSON.parse(localStorage.getItem('moiContributions')) || [];
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const entry = {
+        name: document.getElementById('name').value,
+        occupation: document.getElementById('occupation').value,
+        place: document.getElementById('place').value,
+        relation: document.getElementById('relation').value,
+        contact: document.getElementById('contact').value,
+        contribution: parseFloat(document.getElementById('contribution').value)
+      };
+
+      moiData.push(entry);
+      localStorage.setItem('moiContributions', JSON.stringify(moiData));
+      form.reset();
+      renderTable();
+    });
+
+    function renderTable() {
+      moiTableBody.innerHTML = '';
+      let total = 0;
+
+      moiData.forEach((item, index) => {
+        total += item.contribution;
+
+        const row = `
+          <tr>
+            <td>${index + 1}</td>
+            <td>${item.name}</td>
+            <td>${item.occupation}</td>
+            <td>${item.place}</td>
+            <td>${item.relation}</td>
+            <td>${item.contact || '-'}</td>
+            <td>₹${item.contribution.toFixed(2)}</td>
+          </tr>
+        `;
+        moiTableBody.insertAdjacentHTML('beforeend', row);
+      });
+
+      totalPeopleDisplay.textContent = moiData.length;
+      totalAmountDisplay.textContent = total.toFixed(2);
+    }
+
+    function clearData() {
+      if (confirm("Are you sure you want to delete all contribution data?")) {
+        localStorage.removeItem('moiContributions');
+        moiData = [];
+        renderTable();
+      }
+    }
+
+    function downloadCSV() {
+      if (moiData.length === 0) {
+        alert("No data to download.");
+        return;
+      }
+
+      let csv = "Name,Occupation,Place,Relation,Contact,Contribution\n";
+      moiData.forEach(item => {
+        csv += `${item.name},${item.occupation},${item.place},${item.relation},${item.contact || "-"},${item.contribution}\n`;
+      });
+
+      const blob = new Blob([csv], { type: 'text/csv' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'moi_contributions.csv';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+
+    document.addEventListener('DOMContentLoaded', renderTable);
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
